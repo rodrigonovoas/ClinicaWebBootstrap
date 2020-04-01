@@ -1,0 +1,31 @@
+body{
+    font-family: 'Titillium Web', sans-serif;
+}
+
+#inicio{
+    margin-top:110px;
+    width: 95%;
+}
+
+#inicio-bajo{
+    background-color: bisque;
+    width: 100%;
+    padding: 50px 0 30px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+#sobrenosotros{
+ background-image: url("images/centros_fondo.jpg");
+ background-size: cover;
+ margin-top: 50px;
+ padding-top: 100px;
+ padding-bottom: 100px;
+}
+
+
+
+footer{
+    background: url("img/background.png") no-repeat;
+    background-size: contain;
+}
