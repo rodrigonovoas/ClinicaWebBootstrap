@@ -38,7 +38,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#inicio">Inicio</a>
+                    <a class="nav-link" id="inicioselection">Inicio</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#sobrenosotrosselection">Acerca de Nosotros</a>
@@ -65,7 +65,7 @@
                         <img src="images/cabecera.jpg" alt="" style="width: 100%;">
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 text-center">
                     <div class="header-content-right bg-light"></div>
                     <h2 class="display-2 text-danger">Clínica Manitas</h2>
                     <p class="display-4 mt-5">
@@ -83,13 +83,14 @@
                 "El cuidado de nuestros pacientes es nuestra primera prioridad; por encima de nosotros, por encima de
                 cualquier adversidad."
             </p>
-            <p class="h4">
+            <p class="h4" id="sobrenosotrosselection">
                 - Alberto Suarez, Coordinador de Manitas.
             </p>
         </div>
     </section>
 
-    <div class="container mt-4" id="sobrenosotrosselection">
+
+    <div class="container mt-4">
         <p class="display-4">
             Nosotros
         </p>
@@ -121,11 +122,14 @@
                 </div>
             </div>
         </div>
+        <div id="serviciosselection">
+        </div>
+
     </section>
 
     <!-- Servicios -->
 
-    <div class="container mt-4" id="serviciosselection">
+    <div class="container mt-4">
         <p class="display-4">
             Servicios
         </p>
@@ -163,7 +167,7 @@
                         </p>
                         <img src="images/rehabilitacion.jpg" style="width: 100%">
                     </div>
-                    <div class="text-center">
+                    <div class="text-center" id="porquenosotrosselection">
                         <a href="#" class="btn btn-outline-secondary mt-2">Leer más</a>
                     </div>
                 </div>
@@ -173,8 +177,8 @@
 
     <!-- ¿Por qué nosotros? -->
 
-    <div class="container mt-4" id="porquenosotrosselection">
-        <p class="display-4">
+    <div class="container mt-4">
+        <p class="display-4 tituloporquenosotros">
             ¿Por qué elegirnos?
         </p>
     </div>
@@ -182,20 +186,20 @@
 
     <section id="porquenosotros">
         <div class="container p-3">
-            <div class="d-inline-block">
-                <img src="images/hospital.png">
+            <div class="lineaporquenosotros">
+                <img src="images/hospital.png" class="mb-3">
             </div>
-            <div class="d-inline-block">
+            <div class="lineaporquenosotros">
                 <p class="ml-3">
                     Disponibilidad: más de 100 centros repartidos a lo largo de España.
                 </p>
             </div>
         </div>
         <div class="container p-3">
-            <div class="d-inline-block">
-                <img src="images/clock.png">
+            <div class="lineaporquenosotros">
+                <img src="images/clock.png" class="mb-3">
             </div>
-            <div class="d-inline-block">
+            <div class="lineaporquenosotros">
                 <p class="ml-3">
                     Flexibilidad y compromiso: nos adaptamos al horario de nuestros pacientes y atendemos con la máxima
                     eficiencia posible.
@@ -203,20 +207,20 @@
             </div>
         </div>
         <div class="container p-3">
-            <div class="d-inline-block">
-                <img src="images/doctor.png">
+            <div class="lineaporquenosotros">
+                <img src="images/doctor.png" class="mb-3">
             </div>
-            <div class="d-inline-block">
+            <div class="lineaporquenosotros">
                 <p class="ml-3">
                     Personal Sanitario cercano y de calidad.
                 </p>
             </div>
         </div>
-        <div class="container p-3">
-            <div class="d-inline-block">
-                <img src="images/phone.png">
+        <div class="container p-3" id="contactselection">
+            <div class="lineaporquenosotros">
+                <img src="images/phone.png" class="mb-3">
             </div>
-            <div class="d-inline-block">
+            <div class="lineaporquenosotros">
                 <p class="ml-3">
                     Puedes contactar con nosotros sin problema las 24 horas del día.
                 </p>
@@ -225,7 +229,7 @@
     </section>
 
     <!-- Contacto -->
-    <div class="container" id="contactselection">
+    <div class="container">
         <h2 class="display-4 text-danger text-center">Tu salud en las mejores manos, ¿A qué esperas?</h2>
         <ul class="list-unstyled text-center mt-4">
             <li class="list-inline-item">
@@ -305,12 +309,20 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
+
+                
             });
         });
+
+        //Top scrolling
+        var top_element = document.getElementById("inicioselection");
+        top_element.addEventListener('click', function (e) {
+            $('html,body').scrollTop(0);
+        });
+
     </script>
 </body>
 
