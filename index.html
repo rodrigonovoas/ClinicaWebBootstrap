@@ -66,11 +66,13 @@
                     </div>
                 </div>
                 <div class="col-md-6 text-center">
-                    <div class="header-content-right bg-light"></div>
-                    <h2 class="display-2 text-danger">Clínica Manitas</h2>
-                    <p class="display-4 mt-5">
-                        Porque estás en las mejores manos.
-                    </p>
+                    <div class="header-content-right">
+                        <h2 class="display-2 text-danger">Clínica Manitas</h2>
+                        <p class="display-4 mt-5">
+                            Porque estás en las mejores manos.
+                        </p>
+                    </div>
+        
                 </div>
             </div>
         </div>
@@ -146,7 +148,7 @@
                         <img src="images/medico.jpg" style="width: 100%">
                     </div>
                     <div class="text-center">
-                        <a href="#" class="btn btn-outline-secondary mt-2">Leer más</a>
+                        <a href="#" class="btn btn-outline-secondary mt-2" id="masinfo1">Leer más</a>
                     </div>
                 </div>
                 <div class="col-md-4 d-inline-block">
@@ -157,7 +159,7 @@
                         <img src="images/psicologo.jpg" style="width: 100%">
                     </div>
                     <div class="text-center">
-                        <a href="#" class="btn btn-outline-secondary mt-2">Leer más</a>
+                        <a href="#" class="btn btn-outline-secondary mt-2" id="masinfo2">Leer más</a>
                     </div>
                 </div>
                 <div class="col-md-4 d-inline-block">
@@ -168,7 +170,7 @@
                         <img src="images/rehabilitacion.jpg" style="width: 100%">
                     </div>
                     <div class="text-center" id="porquenosotrosselection">
-                        <a href="#" class="btn btn-outline-secondary mt-2">Leer más</a>
+                        <a href="#" class="btn btn-outline-secondary mt-2" id="masinfo3">Leer más</a>
                     </div>
                 </div>
             </div>
@@ -253,27 +255,36 @@
                 <div class="col-sm"></div>
 
                 <div class="col-sm">
-                        <form class="card my-5 bg-info" style="width: 90%; margin-left: 20px;">
-                            <div class="card-body">
-                                <img src="images/gmail.png" class="pb-3">
-                                <div class="form-group">
-                                    <input type="text" placeholder="Nombre" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" placeholder="Email" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <textarea rows="10" cols="30" placeholder="Mensaje..." class="form-control"></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-outline-secondary btn-block bg-light">Enviar</button>
+                    <form class="card my-5 bg-info" style="width: 90%; margin-left: 20px;">
+                        <div class="card-body">
+                            <img src="images/gmail.png" class="pb-3">
+                            <div class="form-group">
+                                <input type="text" placeholder="Nombre" class="form-control">
                             </div>
-                        </form>
+                            <div class="form-group">
+                                <input type="email" placeholder="Email" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <textarea rows="10" cols="30" placeholder="Mensaje..." class="form-control"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-outline-secondary btn-block bg-light">Enviar</button>
+                        </div>
+                    </form>
                 </div>
 
                 <div class="col-sm"></div>
             </div>
         </div>
     </footer>
+
+        <!-- Pop Up-->
+        <div class="hover_bkgr_fricc">
+            <span class="helper"></span>
+            <div>
+                <div class="popupCloseButton">&times;</div>
+                <p>Servicio destinado a [introducir descripción]</p>
+            </div>
+        </div>
 
 
     <!-- Bootstrap 4 SCRIPTS -->
@@ -301,7 +312,7 @@
         });
         sr.reveal('.header-content-right', {
             duration: 2000,
-            origin: 'right',
+            origin: 'top',
             distance: '300px'
         });
 
@@ -313,14 +324,41 @@
                     behavior: 'smooth'
                 });
 
-                
+
             });
         });
 
         //Top scrolling
         var top_element = document.getElementById("inicioselection");
+
         top_element.addEventListener('click', function (e) {
             $('html,body').scrollTop(0);
+        });
+
+        //Pop-up
+        var popup_trigger1 = document.getElementById("masinfo1");
+
+        popup_trigger1.addEventListener('click', function (e) {
+            $('.hover_bkgr_fricc').show();
+        });
+
+        var popup_trigger2 = document.getElementById("masinfo2");
+
+        popup_trigger2.addEventListener('click', function (e) {
+            $('.hover_bkgr_fricc').show();
+        });
+
+        var popup_trigger3 = document.getElementById("masinfo3");
+
+        popup_trigger3.addEventListener('click', function (e) {
+            $('.hover_bkgr_fricc').show();
+        });
+
+        $('.hover_bkgr_fricc').click(function () {
+            $('.hover_bkgr_fricc').hide();
+        });
+        $('.popupCloseButton').click(function () {
+            $('.hover_bkgr_fricc').hide();
         });
 
     </script>
